@@ -15,6 +15,18 @@ sender = LiveRoom(ROOMID, credential=credential)
 room = LiveDanmaku(ROOMID, credential=credential)
 
 
+async def to_light(id):
+    _sender = LiveRoom(id, credential=credential)
+    log.info(f"正在点亮用户：{id}")
+    log.debug(_sender)
+    for i in range(11):
+        log.info(f"点亮用户：{id}，第{i + 1}次")
+        a = await _sender.send_danmaku(Danmaku(f"第{i + 1}个喵~"))
+        log.debug(a)
+        await asyncio.sleep(5)
+    log.info(f"点亮用户：{id}，完成！")
+
+
 class SendPool:
     def __init__(self):
         self._pool: list[str] = []

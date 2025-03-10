@@ -17,6 +17,7 @@ for i in COOKIES_KEY:
     finally:
         session.close()
 ROOMID = 1839144158
+LIGHT_ROOM_DICT = {"秋亦_zero": 32166966, "稀米suosuo": 1831477465}
 SEND_CD = 5
 MSG_DICT = {
     "喵": 0.0,
